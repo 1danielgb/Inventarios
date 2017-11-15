@@ -16,11 +16,10 @@ public class Helper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL(DataBaseManager.CREATE_TABLE_USERS);
         sqLiteDatabase.execSQL(DataBaseManager.CREATE_TABLE_INVENTORIES);
         sqLiteDatabase.execSQL(DataBaseManager.CREATE_TABLE_CONTAINERS);
         sqLiteDatabase.execSQL(DataBaseManager.CREATE_TABLE_ICONTAINERS);
-        sqLiteDatabase.execSQL(DataBaseManager.CREATE_TABLE_OBJECT);
+        sqLiteDatabase.execSQL(DataBaseManager.CREATE_TABLE_OBJECTS);
     }
 
     @Override
