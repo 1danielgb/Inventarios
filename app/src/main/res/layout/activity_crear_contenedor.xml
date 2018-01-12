@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hobo.inventarios.viewCrearContenedor.CrearContenedor">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_views">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/etNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nombre"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilLargo"
+        android:layout_width="@dimen/cont_width_size_et"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_views"
+        android:layout_below="@id/tilNombre"
+        android:layout_marginRight="@dimen/space_between_dimensions"
+        android:layout_marginEnd="@dimen/space_between_dimensions">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/etLargo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/largo"
+            android:inputType="numberDecimal"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilAlto"
+        android:layout_width="@dimen/cont_width_size_et"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_views"
+        android:layout_below="@id/tilNombre"
+        android:layout_toRightOf="@+id/tilLargo"
+        android:layout_toEndOf="@+id/tilLargo"
+        android:layout_marginRight="@dimen/space_between_dimensions"
+        android:layout_marginEnd="@dimen/space_between_dimensions">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/etAlto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/alto"
+            android:inputType="numberDecimal" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilAncho"
+        android:layout_width="@dimen/cont_width_size_et"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_views"
+        android:layout_below="@id/tilNombre"
+        android:layout_toRightOf="@+id/tilAlto"
+        android:layout_toEndOf="@+id/tilAlto">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/etAncho"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/ancho"
+            android:inputType="numberDecimal"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tilLargo"
+        android:padding="@dimen/padding_views">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/etDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/descripcion"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnGuardarInventario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/inventario_item_padding"
+        android:letterSpacing=".5"
+        android:text="@string/btn_guardar"
+        android:layout_marginTop="@dimen/margin_bottom_btn_crear_inventario"
+        android:theme="@style/MyButtonRaised"
+        android:layout_alignParentBottom="true"
+        />
+
+</RelativeLayout>

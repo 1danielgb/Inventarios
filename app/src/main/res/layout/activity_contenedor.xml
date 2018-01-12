@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hobo.inventarios.viewContenedor.Contenedor">
+
+    <TextView
+        android:id="@+id/tvNameContenedor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/nombre_contenedor"
+        android:layout_marginTop="@dimen/margin_top_name"
+        android:textAlignment="center"
+        android:textSize="@dimen/text_name_size"/>
+
+    <TextView
+        android:id="@+id/tvLargo"
+        android:layout_width="@dimen/cont_width_size_et"
+        android:layout_height="wrap_content"
+        android:text="@string/largo"
+        android:layout_below="@id/tvNameContenedor"
+        android:layout_marginRight="@dimen/space_between_dimensions"
+        android:layout_marginEnd="@dimen/space_between_dimensions"
+        android:layout_marginTop="@dimen/margin_between_data"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin" />
+
+    <TextView
+        android:id="@+id/tvAlto"
+        android:layout_width="@dimen/cont_width_size_et"
+        android:layout_height="wrap_content"
+        android:text="@string/alto"
+        android:layout_below="@id/tvNameContenedor"
+        android:layout_marginRight="@dimen/space_between_dimensions"
+        android:layout_marginEnd="@dimen/space_between_dimensions"
+        android:layout_marginTop="@dimen/margin_between_data"
+        android:layout_toRightOf="@+id/tvLargo"
+        android:layout_toEndOf="@+id/tvLargo" />
+
+    <TextView
+        android:id="@+id/tvAncho"
+        android:layout_width="@dimen/cont_width_size_et"
+        android:layout_height="wrap_content"
+        android:text="@string/ancho"
+        android:layout_below="@id/tvNameContenedor"
+        android:layout_marginRight="@dimen/space_between_dimensions"
+        android:layout_marginEnd="@dimen/space_between_dimensions"
+        android:layout_marginTop="@dimen/margin_between_data"
+        android:layout_toRightOf="@+id/tvAlto"
+        android:layout_toEndOf="@+id/tvAlto" />
+
+    <TextView
+        android:id="@+id/tvDescriptionContenedor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvLargo"
+        android:text="@string/descripcion"
+        android:padding="@dimen/padding_views"
+        android:layout_marginTop="@dimen/margin_between_data"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvContenedoresInternos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_between_data"
+        android:layout_below="@+id/tvDescriptionContenedor"
+        android:layout_above="@+id/btnAgregarIContenedor">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/btnAgregarIContenedor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/agregar_contenedor"
+        android:letterSpacing=".5"
+        android:layout_alignParentBottom="true"
+        android:theme="@style/MyButtonRaised"
+        android:onClick="openCrearIContenedor"/>
+
+</RelativeLayout>

@@ -5,16 +5,21 @@ package com.example.hobo.inventarios.pojo;
  */
 
 public class IContainer {
-    int containerId;
+    int id;
     String name, properties;
     double height, length, width;
 
-    public IContainer(String name, double height, double length, double width, String properties) {
+    public IContainer(int id, String name, double height, double length, double width, String properties) {
+        this.id = id;
         this.name = name;
         this.height = height;
         this.length = length;
         this.width = width;
         this.properties = properties;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {

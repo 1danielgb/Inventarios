@@ -5,7 +5,6 @@ package com.example.hobo.inventarios.pojo;
  */
 
 public class Object {
-    int containerId;
     String name, properties;
 
     public Object(String name, String properties) {

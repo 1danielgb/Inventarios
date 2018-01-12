@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_item_list"
+        android:layout_marginBottom="@dimen/margin_bottom_item_list">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/ivContact"
+            android:layout_width="@dimen/contact_photo_size"
+            android:layout_height="@dimen/contact_photo_size"
+            android:src="@drawable/ic_dashboard"
+            app:civ_border_color="@color/cardview_light_background"
+            android:layout_marginLeft="@dimen/contact_photo_margin_left"
+            android:layout_marginStart="@dimen/contact_photo_margin_left"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/tvNameInventario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nombre_objeto"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_name_size"
+            android:textAlignment="center"
+            android:padding="@dimen/inventario_item_padding"
+            android:layout_toRightOf="@+id/ivContact"
+            android:layout_toEndOf="@+id/ivContact" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

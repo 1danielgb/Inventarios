@@ -28,6 +28,7 @@ public class DataBaseCRUD {
     /* inventories table methods */
     public void insertInventory(ContentValues contentValues) {
         sqLiteDatabase.insert(DataBaseManager.TABLE_NAME_INVENTORIES, null, contentValues);
+//        sqLiteDatabase.close();
     }
 
     public ArrayList<Inventory> getInventories() {
@@ -35,9 +36,10 @@ public class DataBaseCRUD {
         String query = "SELECT * FROM  " + DataBaseManager.TABLE_NAME_INVENTORIES;
         Cursor cursor = sqLiteDatabase.rawQuery(query, null);
         while (cursor.moveToNext()) {
+            int id = cursor.getInt(cursor.getColumnIndexOrThrow(DataBaseManager.TABLE_INVENTORIES_ID));
             String name = cursor.getString(cursor.getColumnIndexOrThrow(DataBaseManager.TABLE_INVENTORIES_NAME));
             String properties = cursor.getString(cursor.getColumnIndexOrThrow(DataBaseManager.TABLE_INVENTORIES_PROPERTIES));
-            inventories.add(new Inventory(name, properties));
+            inventories.add(new Inventory(id, name, properties));
         }
         cursor.close();
         return inventories;
@@ -46,6 +48,7 @@ public class DataBaseCRUD {
     /* containers table methods */
     public void insertContainer(ContentValues contentValues) {
         sqLiteDatabase.insert(DataBaseManager.TABLE_NAME_CONTAINERS, null, contentValues);
+//        sqLiteDatabase.close();
     }
 
     public ArrayList<Container> getContainers(int inventoryId) {
@@ -55,12 +58,13 @@ public class DataBaseCRUD {
                 " WHERE " + DataBaseManager.TABLE_CONTAINERS_INVENTORY_ID + " = " + inventoryId + ";";
         Cursor cursor = sqLiteDatabase.rawQuery(query, null);
         while (cursor.moveToNext()) {
+            int id = cursor.getInt(cursor.getColumnIndexOrThrow(DataBaseManager.TABLE_CONTAINERS_ID));
             String name = cursor.getString(cursor.getColumnIndexOrThrow(DataBaseManager.TABLE_CONTAINERS_NAME));
             double height = cursor.getDouble(cursor.getColumnIndexOrThrow(DataBaseManager.TABLE_CONTAINERS_HEIGHT));
             double length = cursor.getDouble(cursor.getColumnIndexOrThrow(DataBaseManager.TABLE_CONTAINERS_LENGTH));
             double width = cursor.getDouble(cursor.getColumnIndexOrThrow(DataBaseManager.TABLE_CONTAINERS_WIDTH));
             String properties = cursor.getString(cursor.getColumnIndexOrThrow(DataBaseManager.TABLE_CONTAINERS_PROPERTIES));
-            containers.add(new Container(name, height, length, width, properties));
+            containers.add(new Container(id, name, height, length, width, properties));
         }
         cursor.close();
         return containers;
@@ -69,6 +73,7 @@ public class DataBaseCRUD {
     /* icontainers table methods */
     public void insertIContainer(ContentValues contentValues) {
         sqLiteDatabase.insert(DataBaseManager.TABLE_NAME_ICONTAINERS, null, contentValues);
+//        sqLiteDatabase.close();
     }
 
     public ArrayList<IContainer> getIContainers(int containerId) {
@@ -78,12 +83,13 @@ public class DataBaseCRUD {
                 " WHERE " + DataBaseManager.TABLE_ICONTAINERS_CONTAINER_ID + " = " + containerId + ";";
         Cursor cursor = sqLiteDatabase.rawQuery(query, null);
         while (cursor.moveToNext()) {
-            String name = cursor.getString(cursor.getColumnIndexOrThrow(DataBaseManager.TABLE_CONTAINERS_NAME));
-            double height = cursor.getDouble(cursor.getColumnIndexOrThrow(DataBaseManager.TABLE_CONTAINERS_HEIGHT));
-            double length = cursor.getDouble(cursor.getColumnIndexOrThrow(DataBaseManager.TABLE_CONTAINERS_LENGTH));
-            double width = cursor.getDouble(cursor.getColumnIndexOrThrow(DataBaseManager.TABLE_CONTAINERS_WIDTH));
-            String properties = cursor.getString(cursor.getColumnIndexOrThrow(DataBaseManager.TABLE_CONTAINERS_PROPERTIES));
-            containers.add(new IContainer(name, height, length, width, properties));
+            int id = cursor.getInt(cursor.getColumnIndexOrThrow(DataBaseManager.TABLE_ICONTAINERS_ID));
+            String name = cursor.getString(cursor.getColumnIndexOrThrow(DataBaseManager.TABLE_ICONTAINERS_NAME));
+            double height = cursor.getDouble(cursor.getColumnIndexOrThrow(DataBaseManager.TABLE_ICONTAINERS_HEIGHT));
+            double length = cursor.getDouble(cursor.getColumnIndexOrThrow(DataBaseManager.TABLE_ICONTAINERS_LENGTH));
+            double width = cursor.getDouble(cursor.getColumnIndexOrThrow(DataBaseManager.TABLE_ICONTAINERS_WIDTH));
+            String properties = cursor.getString(cursor.getColumnIndexOrThrow(DataBaseManager.TABLE_ICONTAINERS_PROPERTIES));
+            containers.add(new IContainer(id, name, height, length, width, properties));
         }
         cursor.close();
         return containers;
@@ -92,6 +98,7 @@ public class DataBaseCRUD {
     /* objects table methods */
     public void insertObject(ContentValues contentValues) {
         sqLiteDatabase.insert(DataBaseManager.TABLE_NAME_OBJECTS, null, contentValues);
+//        sqLiteDatabase.close();
     }
 
     public ArrayList<Object> getObjects(int icontainerId) {
@@ -107,5 +114,16 @@ public class DataBaseCRUD {
         }
         cursor.close();
         return objectArrayList;
+    }
+
+    public int getUserId() {
+        int userId;
+        String query = "SELECT " + DataBaseManager.TABLE_USER_ID +
+                " FROM " + DataBaseManager.TABLE_NAME_USER;
+        Cursor cursor = sqLiteDatabase.rawQuery(query, null);
+        cursor.moveToNext();
+        userId = cursor.getInt(cursor.getColumnIndexOrThrow(DataBaseManager.TABLE_USER_ID));
+        cursor.close();
+        return userId;
     }
 }

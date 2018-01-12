@@ -58,7 +58,7 @@ public class DataBaseConstructor {
         contentValues.put(DataBaseManager.TABLE_ICONTAINERS_LENGTH, length);
         contentValues.put(DataBaseManager.TABLE_ICONTAINERS_WIDTH, width);
         contentValues.put(DataBaseManager.TABLE_ICONTAINERS_PROPERTIES, properties);
-        db.insertContainer(contentValues);
+        db.insertIContainer(contentValues);
     }
 
     public ArrayList<IContainer> getIContainers(int containerId) {
@@ -68,8 +68,8 @@ public class DataBaseConstructor {
     /* Object Methods */
     public void insertObject(int icontainerId, String name, String properties) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(DataBaseManager.TABLE_OBJECTS_ID, icontainerId);
         contentValues.put(DataBaseManager.TABLE_OBJECTS_ICONTAINER_ID, icontainerId);
+        contentValues.put(DataBaseManager.TABLE_OBJECTS_NAME, name);
         contentValues.put(DataBaseManager.TABLE_OBJECTS_PROPERTIES, properties);
         db.insertObject(contentValues);
     }
@@ -77,4 +77,6 @@ public class DataBaseConstructor {
     public ArrayList<Object> getObjects(int icontinerId) {
         return db.getObjects(icontinerId);
     }
+
+    public int getUserId() { return db.getUserId(); }
 }

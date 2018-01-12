@@ -5,4 +5,18 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="crear_inventario">Crear Inventario</string>
+    <string name="ver_inventarios">Ver Inventarios</string>
+    <string name="nombre_inventario">Nombre Inventario</string>
+    <string name="descripcion">Descripcion</string>
+    <string name="agregar_contenedor">Agregar Contenedor</string>
+    <string name="nombre_contenedor">Nombre Contenedor</string>
+    <string name="btn_guardar">Guardar</string>
+    <string name="nombre">Nombre</string>
+    <string name="btn_tomar_foto">Tomar Foto</string>
+    <string name="largo">Largo</string>
+    <string name="alto">Alto</string>
+    <string name="ancho">Ancho</string>
+    <string name="nombre_objeto">Nombre Objeto</string>
+    <string name="agregar_objeto">Agregar Objeto</string>
 </resources>

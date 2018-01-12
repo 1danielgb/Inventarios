@@ -6,8 +6,10 @@ package com.example.hobo.inventarios.pojo;
 
 public class Inventory {
     private String name, properties;
+    int id;
 
-    public Inventory(String name, String properties) {
+    public Inventory(int id, String name, String properties) {
+        this.id = id;
         this.name = name;
         this.properties = properties;
     }
@@ -26,5 +28,9 @@ public class Inventory {
 
     public void setProperties(String properties) {
         this.properties = properties;
+    }
+
+    public int getId() {
+        return id;
     }
 }

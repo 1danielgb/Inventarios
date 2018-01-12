@@ -5,4 +5,20 @@
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="btn_index_margin_bottom">45dp</dimen>
+    <dimen name="margin_bottom_btn_crear_inventario">15dp</dimen>
+    <dimen name="margin_top_name">35dp</dimen>
+    <dimen name="action_bar_elevation">4dp</dimen>
+    <dimen name="text_name_size">28sp</dimen>
+    <dimen name="inventario_item_padding">15dp</dimen>
+    <dimen name="padding_views">10dp</dimen>
+    <dimen name="content_items_height">245dp</dimen>
+    <dimen name="img_size_insert">80dp</dimen>
+    <dimen name="cont_width_size_et">90dp</dimen>
+    <dimen name="space_between_dimensions">35dp</dimen>
+    <dimen name="margin_between_data">15dp</dimen>
+    <dimen name="padding_item_list">10dp</dimen>
+    <dimen name="margin_bottom_item_list">5dp</dimen>
+    <dimen name="contact_photo_size">50dp</dimen>
+    <dimen name="contact_photo_margin_left">20dp</dimen>
 </resources>
